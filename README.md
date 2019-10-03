@@ -12,10 +12,11 @@ Then, using array subscripting and string interpolation, print out the String `"
 
 ```swift
 
-let colors = ["orange, yellow, and lavender are some of my favorite colors"]
-print(" \(colors) are some of my favorite colors")
+var colors = ["orange", "red", "yellow", "turquoise", "lavender"]
+print([colors.remove(at: 0)], [colors.remove(at: 1)], [colors.popLast() ?? "Rainbow"], "are some of my favorite colors")
 
 ```
+
 
 
 ## Question 2
