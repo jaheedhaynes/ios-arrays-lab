@@ -10,6 +10,13 @@ Create an array of strings called `colors` that contain "orange", "red", "yellow
 
 Then, using array subscripting and string interpolation, print out the String `"orange, yellow, and lavender are some of my favorite colors"`.
 
+```swift
+
+let colors = ["orange, yellow, and lavender are some of my favorite colors"]
+print(" \(colors) are some of my favorite colors")
+
+```
+
 
 ## Question 2
 
