@@ -15,8 +15,12 @@ Then, using array subscripting and string interpolation, print out the String `"
 var colors = ["orange", "red", "yellow", "turquoise", "lavender"]
 print([colors.remove(at: 0)], [colors.remove(at: 1)], [colors.popLast() ?? "Rainbow"], "are some of my favorite colors")
 
-```
 
+
+```
+var colors: [String]
+colors = ["orange", "red", "yellow", "turquoise", "lavender"]
+print("\(colors[0]) \(colors[2]) and \(colors[4]) are some of my favorite colors.")
 
 
 ## Question 2
@@ -25,12 +29,29 @@ Remove "Illinois" and "Kansas" from the array below.
 
 `var westernStates = ["California", "Oregon", "Washington", "Idaho", "Illinois", "Kansas"]`
 
+var westernStates = ["California", "Oregon", "Washington", "Idaho", "Illinois", "Kansas"]
+westernStates.remove(at: westernStates.count - 1)
+westernStates.remove(at: westernStates.count - 1)
+
 
 ## Question 3
 
 Iterate through the array below. For each state, print out the name of the state, a colon, and whether it is or is not **in the continental United States.**
 
 `let moreStates = ["Hawaii", "New Mexico", "Alaska", "Montana", "Texas", "New York", "Florida"]`
+
+let moreStates = ["Hawaii", "New Mexico", "Alaska", "Montana", "Texas", "New York", "Florida"]
+
+let nonContinentalStates = ["Hawaii", "Alaska"]
+
+for state in moreStates {
+    if nonContinentalStates.contains(state) {
+        print("\(state): is not continental")
+    }   else {
+        print("\(state): is continental")
+    }
+}
+
 
 
 ## Question 4
@@ -43,6 +64,16 @@ Iterate through the array below. For each sentence, print out how many non-white
 
 `let myFavoriteQuotes = ["To be or not to be, that is the question.", "The only source of knowledge is experience.", "Mr. Gorbachev, tear down this wall!", "Four score and twenty years ago..."]`
 
+let randString = "To be or not to be, that is the question., The only source of knowledge is experience., Mr. Gorbachev, tear down this wall!, Four score and twenty years ago..."
+
+var numberOfNonWhitespceChararcter = 0
+for char in randString {
+    if char != " " {
+        numberOfNonWhitespceChararcter += 1
+    }
+}
+print(numberOfNonWhitespceChararcter)
+
 
 ## Question 5
 
@@ -52,6 +83,13 @@ Iterate through `garden` and place any 🌷 that you find into the `basket`. Rep
 var garden = ["dirt","🌷","dirt","🌷","dirt","dirt","🌷","dirt","🌷","dirt"]
 var basket = [String]()
 ```
+for (index, item) in garden.enumurated() where item == "🌷" {
+basket.append("🌷")
+garden[item] = "dirt"
+}
+print("There are \(basket.count) 🌷 in the basket")
+print(garden)
+
 
 ## Question 6
 
@@ -63,6 +101,10 @@ The below array represents an unfinished batting lineup for a baseball team. **Y
 - Put "Reyes" to bat 8th instead.
 
 `var battingLineup = ["Reyes", "Jeter", "Ramirez", "Pujols","Griffey","Thomas","Jones", "Rodriguez"]`
+
+battingLineup.append("Suzuki")
+battingLineup[1] = "Tejada"
+battingLineup[battingLineup.count - 3] = "Guerrero"
 
 
 ## Question 7
@@ -97,7 +139,17 @@ target = 3
 
 //false
 ```
+var numbers: [Int]
+let target: Int = 32
 
+for index in numbers {
+if index == target {
+print("true")
+} 
+if index != target {
+print("false")
+}
+}
 
 ## Question 8
 
@@ -151,6 +203,15 @@ var listOne = [28, 64, 7, 96, 13, 32, 94, 11, 80, 68]
 var listTwo = [18, 94, 48, 6, 42, 68, 79, 76, 13, 7]
 var sharedElements = [Int]()
 ```
+for num1 in listOne {
+   for num2 in listTwo {
+   if num2 == num1 {
+   sharedElements.append(num1)
+}
+}
+}
+
+print("There are \(sharedElements.count) shared elements")
 
 # Part 2
 
