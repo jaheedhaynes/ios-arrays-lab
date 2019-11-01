@@ -179,6 +179,14 @@ Iterate through `secondListOfNumbers`, and print out all the odd numbers.
 
 `var secondListOfNumbers = [19,13,14,19,101,10000,141,404]`
 
+var secondListOfNumbers = [19,13,14,19,101,10000,141,404]
+for oddNum in secondListOfNumbers {
+     if oddNum % 2 == 1 {
+        print("\(oddNum) is an odd number")
+      } 
+    }
+
+
 
 ## Question 11
 
@@ -186,13 +194,20 @@ Iterate through `thirdListOfNumbers`, and print out the sum.
 
 `var thirdListOfNumbers = [11, 26, 49, 61, 25, 40, 74, 3, 22, 23]`
 
+thirdListOfNumbers.reduce(0, +)
 
 ## Question 12
 
 Iterate through `thirdListOfNumbers`, and print out the sum of all the even numbers.
 
-`var thirdListOfNumbers = [11, 26, 49, 61, 25, 40, 74, 3, 22, 23]`
+var thirdListOfNumbers = [11, 26, 49, 61, 25, 40, 74, 3, 22, 23]
 
+for evenNum in thirdListOfNumbers {
+ if evenNum % 2 == 0 {
+    let sum = thirdListOfNumbers.reduce(0, +)
+    print(sum)
+  }
+}
 
 ## Question 13
 
